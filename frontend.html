@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART CONTRACT</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+    <script type = "module" src = "working.js"></script>
+</head>
+<body>
+    <h1><center>TRANSACTION APPLICATION</center></h1>
+    <h2>DEPOSITING THE BALANCE</h2>
+    <div>
+        <button onclick = "depositBalance()">
+            DEPOSIT HERE
+        </button>
+    </div>
+    <h2>WITHDRAWING THE BALANCE</h2>
+    <div>
+        <button onclick="withdrawBalance()">
+            WITHDRAW HERE
+        </button>
+    </div>
+    <h2>PRINTING THE BALANCE</h2>
+    <div>
+        <button onclick = "printBalance()" > 
+            PRINT HERE
+        </button>
+    </div>
+    <script>
+
+        // Update with your desired Ethereum address
+        const ethereumAddress = "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC";
+
+        // Deposit function
+        function deposit() {
+            const amount = 100; // Replace with the desired amount
+            depositBalance(amount);
+        }
+
+        // Withdraw function
+        function withdraw() {
+            const amount = 50; // Replace with the desired amount
+            withdrawBalance(amount);
+        }
+
+        // Print function
+        function print() {
+            printBalance();
+        }
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+   
+
+
