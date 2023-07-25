@@ -1,4 +1,4 @@
-SMART CONTRACT (FRONTEND)
+## SMART CONTRACT (FRONTEND)
 In this project, we have to make a smart contract of two-three functions and make a frontend for displaying these functions. We also have to connect the front end of this project to the Metamask wallet.
 ## Description
 
@@ -20,7 +20,7 @@ From there we got accounts and their respective private keys which we can use to
 4. Run the smart contract on Remix IDE and put the contract address in the javascript file.
 5. Then connect the site to the metamask wallet.
 
-Smart Contract Solidity Code
+####Smart Contract Solidity Code
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
@@ -44,7 +44,7 @@ contract Bank {
     }
 }
 
-HTML Code
+####HTML Code
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,7 +101,7 @@ HTML Code
 </body>
 </html>
 
-Javascript Code
+####Javascript Code
 import Web3 from "web3";
 window.addEventListener('load', async () => {
     if (window.ethereum) {     // for interacting with the metamask
