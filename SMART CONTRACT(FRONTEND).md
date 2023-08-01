@@ -20,7 +20,7 @@ From there we got accounts and their respective private keys which we can use to
 4. Run the smart contract on Remix IDE and put the contract address in the javascript file.
 5. Then connect the site to the metamask wallet.
 
-####Smart Contract Solidity Code
+Smart Contract Solidity Code
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
@@ -44,145 +44,7 @@ contract Bank {
     }
 }
 
-####HTML Code
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMART CONTRACT</title>
-    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
-    <script type = "module" src = "working.js"></script>
-</head>
-<body>
-    <h1><center>TRANSACTION APPLICATION</center></h1>
-    <h2>DEPOSITING THE BALANCE</h2>
-    <div>
-        <button onclick = "depositBalance()">
-            DEPOSIT HERE
-        </button>
-    </div>
-    <h2>WITHDRAWING THE BALANCE</h2>
-    <div>
-        <button onclick="withdrawBalance()">
-            WITHDRAW HERE
-        </button>
-    </div>
-    <h2>PRINTING THE BALANCE</h2>
-    <div>
-        <button onclick = "printBalance()" > 
-            PRINT HERE
-        </button>
-    </div>
-    <script>
-
-        const ethereumAddress = "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC";
-
-        // Deposit function
-        function deposit() {
-            const amount = 60; 
-            depositBalance(amount);
-        }
-
-        // Withdraw function
-        function withdraw() {
-            const amount = 10; 
-            withdrawBalance(amount);
-        }
-
-        // Print function
-        function print() {
-            printBalance();
-        }
-    </script>
-
-
-</body>
-</html>
-
-####Javascript Code
-import Web3 from "web3";
-window.addEventListener('load', async () => {
-    if (window.ethereum) {     // for interacting with the metamask
-        window.web3 = new Web3(ethereum);
-    }
-    else if (window.web3) {
-        window.web3 = new Web3(web3.currentProvider);
-    }
-    else {
-        console.log('No web3 provider detected');
-    }
-  });
-
-  const web3 = new Web3("http://127.0.0.1:5500/first.html");
-  
-  const contractAddress = "0x5B38Da6a701c568545dCfcB03FcB875f56beddC4";
-  const  contractABI = [
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "depositBalance",
-            "outputs": [],
-            "stateMutability": "payable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                }
-            ],
-            "name": "withdrawBalance",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [],
-            "name": "printBalance",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        }
-    ]
-    const contractInstance = new web3.eth.Contract(contractABI, contractAddress);
-
-    async function depositBalance(amount) {
-        
-          await Bank.methods.depositBalance(amount).send({ from: 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BCn }); 
-          console.log("Deposit successful");
-
-      }    
-
-
-
-async function withdrawBalance(amount) {
-  
-    await Bank.methods.withdrawBalance(amount).send({ from: 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BCn }); 
-    console.log("Withdrawal successful");
-}
-
-async function printBalance() {
-  
-    const balance = await Bank.methods.printBalance().call({ from: 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BCn }); 
-    console.log("Account balance:", balance);
- 
-}
-
+Now to compile the above code click on the "Solidity Compiler" tab in the left-hand sidebar. The compiler option should use the version that is written in the contract. and then click on the "Compile smart.sol" button. After this to deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. and then click on deploy button to deploy the contract smart.sol. 
 
 
 
