@@ -50,9 +50,7 @@ Now to compile the above code click on the "Solidity Compiler" tab in the left-h
 
 
 ## Authors
-
-Metacrafter Chris
-@metacraftersio
+JATIN SAINI
 
 ## License
 
